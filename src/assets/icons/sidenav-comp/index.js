@@ -1,0 +1,17 @@
+export { default as AccountIcon } from "./AccountIcon";
+export { default as AuthorizationListIcon } from "./AuthorizationListIcon";
+export { default as AuthorizationQueueIcon } from "./AuthorizationQueueIcon";
+export { default as BlockCardIcon } from "./BlockCardIcon";
+export { default as BranchesIcon } from "./BranchesIcon";
+export { default as CardProfileIcon } from "./CardProfileIcon";
+export { default as CardRequestIcon } from "./CardRequestIcon";
+export { default as CardSchemeIcon } from "./CardSchemeIcon";
+export { default as ComplaintsLogIcon } from "./ComplaintsLogIcon";
+export { default as ComplaintsResolveIcon } from "./ComplaintsResolveIcon";
+export { default as DashboardIcon } from "./DashboardIcon";
+export { default as GeneratePinIcon } from "./GeneratePinIcon";
+export { default as LogoutIcon } from "./LogoutIcon";
+export { default as StockIcon } from "./StockIcon";
+export { default as TrailIcon } from "./TrailIcon";
+export { default as UsersIcon } from "./UsersIcon";
+export { default as UserShieldIcon } from "./UserShieldIcon";
