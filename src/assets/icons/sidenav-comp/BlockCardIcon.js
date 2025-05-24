@@ -9,18 +9,18 @@ const SvgBlockCardIcon = (props) => (
   >
     <g clipPath="url(#block_card_icon_svg__a)">
       <path
-        stroke="#D0D5DD"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M2.976 3q-.316.127-.57.327a3 3 0 0 0-.37.348c-.702.788-.702 1.967-.702 4.325s0 3.537.702 4.325q.168.189.37.348c.836.66 2.089.66 4.595.66h2c1.995 0 3.17 0 4-.333"
       />
       <path
-        stroke="#D0D5DD"
+        stroke="currentColor"
         strokeLinecap="round"
         d="m1.334 1.334 13.333 13.333"
       />
       <path
-        stroke="#D0D5DD"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         d="M1.668 6h4.333"

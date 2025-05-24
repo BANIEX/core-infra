@@ -7,7 +7,7 @@ const SvgUserShieldIcon = (props) => (
     fill="none"
     {...props}
   >
-    <g stroke="#D0D5DD" clipPath="url(#user_shield_icon_svg__a)">
+    <g stroke="currentColor" clipPath="url(#user_shield_icon_svg__a)">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"

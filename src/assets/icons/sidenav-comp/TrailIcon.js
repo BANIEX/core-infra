@@ -9,7 +9,7 @@ const SvgTrailIcon = (props) => (
   >
     <g clipPath="url(#trail_icon_svg__a)">
       <path
-        stroke="#D0D5DD"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         d="m6 12-4.666 2.667V4.001l4.667-2.667m0 10.667 4.666 2.666m-4.666-2.666V1.334m4.666 13.333 4-2.666V1.334l-4 2.667m0 10.666V4.001m0 0L6.001 1.334"

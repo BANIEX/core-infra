@@ -1,103 +1,123 @@
+"use client"
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import complaintslog from "@/assets/icons/complaint_log_with_plus_icon.svg"
+import { useState, ChangeEvent } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { LogTable } from "@/components/log-table";
+import SearchBar from "@/components/search-bar";
+import DateFilterToolbar from "@/components/date-filter";
+
+
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+  const [query, setQuery] = useState<string>("");
+
+  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
+
+
+  
+
+ 
+
+
+
+
+
+
+
+  return (
+    <div className="">
+      <div className="border-b-2 ">
+        <h1 className="text-lg text-lapo-text-primary font-medium">
+          Complaints : Log
+        </h1>
+        <h5 className="text-sm text-lapo-text-secondary font-normal mb-2">
+          View details of logged complaints and log new ones here.
+        </h5>
+      </div>
+
+      <div className="mt-5">
+        <Tabs defaultValue="pending" className="w-full">
+          <div className="flex justify-between">
+            <TabsList className="flex border border-gray-300 rounded-md overflow-hidden bg-[#F9FAFB]">
+              
+              <TabsTrigger
+                value="pending"
+                className={`
+            flex-1 px-4 py-2 text-gray-700
+            data-[state=active]:font-medium
+            data-[state=active]:before:content-['']
+            data-[state=active]:before:block
+            data-[state=active]:before:w-2
+            data-[state=active]:before:h-2
+            data-[state=active]:before:rounded-full
+            data-[state=active]:before:bg-lapo-primary-blue
+            data-[state=active]:before:mr-2
+          `}
+              >
+                Pending
+              </TabsTrigger>
+
+             
+              <TabsTrigger
+                value="resolved"
+                className={`
+            flex-1 px-4 py-2 flex items-center justify-center text-gray-700
+            data-[state=active]:font-medium
+            data-[state=active]:before:content-['']
+            data-[state=active]:before:block
+            data-[state=active]:before:w-2
+            data-[state=active]:before:h-2
+            data-[state=active]:before:rounded-full
+            data-[state=active]:before:bg-lapo-primary-blue
+            data-[state=active]:before:mr-2
+          `}
+              >
+                Resolved
+              </TabsTrigger>
+            </TabsList>
+            <div>
+              <Button
+                className="
+        bg-lapo-secondary-blue     
+        text-white               
+        hover:bg-lapo-primary-blue
+        focus:ring-lapo-primary-blue 
+      "
+              >
+                <Image src={complaintslog} width={20} height={20} alt="compl" />
+                Log complaint
+              </Button>
+            </div>
+          </div>
+          <div className="flex justify-between">
+            <div className="w-[320px]">
+              <SearchBar
+                value={query}
+                onChange={handleSearchChange}
+                placeholder="Search complaint"
+              />
+            </div>
+            <div className="flex gap-2">
+              <DateFilterToolbar
+                onDateClick={() => console.log("open date")}
+                onFilterClick={() => console.log("open filter")}
+              />
+            </div>
+          </div>
+          <TabsContent value="pending">
+            <LogTable />
+          </TabsContent>
+          <TabsContent value="resolved">
+            <LogTable />
+          </TabsContent>
+        </Tabs>
+      </div>
     </div>
   );
 }
