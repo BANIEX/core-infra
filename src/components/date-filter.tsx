@@ -1,8 +1,8 @@
 // components/DateFilterToolbar.tsx
 import React, { FC } from "react";
 import Image from "next/image";
-import dateIcon from "@/assets/icons/date_icon.svg"
-import filterIcon from "@/assets/icons/filter_icon.svg";
+import dateIcon from "@/assets/icons/calendar.png"
+import filterIcon from "@/assets/icons/filter-lines.png";
 
 
 

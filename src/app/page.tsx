@@ -1,7 +1,7 @@
 "use client"
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import complaintslog from "@/assets/icons/complaint_log_with_plus_icon.svg"
+import complaintslog from "@/assets/icons/file-plus.png"
 import { useState, ChangeEvent } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LogTable } from "@/components/log-table";
