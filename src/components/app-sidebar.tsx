@@ -13,6 +13,7 @@ import {
   SidebarRail,
   SidebarTrigger
 } from "@/components/ui/sidebar"
+import Link from "next/link";
 
 
 import CardsIcon from '@/assets/icons/sidenav-comp/CreditCard'
@@ -67,7 +68,7 @@ const data = {
         },
         {
           title: "Complaints: Resolve",
-          url: "/complaints/resolve",
+          url: "/complaints-resolve",
           icon: ComplaintsResolveIcon,
         },
         { title: "Authorization List", url: "/auth/list", icon: AuthListIcon },
@@ -127,7 +128,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                       <div>
                         <item.icon />
 
-                        <a href={item.url}>{item.title}</a>
+
+                        <Link href={item.url}>
+                        {/* <a href={item.url}> */}
+                          {item.title}
+                          
+                          {/* </a> */}
+                        
+                        </Link>
+
                       </div>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
